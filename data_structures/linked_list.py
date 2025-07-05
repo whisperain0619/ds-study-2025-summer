@@ -23,7 +23,17 @@ class LinkedList:
         # 1. 새로운 노드를 만듭니다.
         # 2. 리스트가 비어있다면(head가 None이라면), head를 새 노드로 지정합니다.
         # 3. 리스트가 비어있지 않다면, 맨 마지막 노드를 찾아서 그 노드의 next를 새 노드로 지정합니다.
-        pass
+        new_node = Node(data)
+        if self.head:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+        else:
+            self.head = new_node
+            
+
+
 
     def print_all(self):
         """
